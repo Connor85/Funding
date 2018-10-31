@@ -1,18 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, onInit } from '@angular/core';
 import { Project } from '../project.model';
+import { Router } from '@angular/router';
+import { ProjectService } from '../project.service';
 
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.css']
+  styleUrls: ['./project.component.css'],
+  providers: [ProjectService]
 })
-export class ProjectComponent implements OnInit {
 
-  ngOnInit() {
+
+export class ProjectComponent implements OnInit{
+
+  projects: Project[];
+
+  constructor(private router: Router, private projectService: ProjectService){}
+
+  ngOnInit(){
+
   }
 
-  projects: Project[] = [
-    new Project ("Clean Water in Africa", "This project builds clean drinking water wells in rural areas", "Connor David  Meria", 4000),
-    new Project ("Fly Meria and David home", "To reunite two great indviduals with their families in India and China", "Connor", 5000)
-  ]
+  goToDetailPage(clickedProject: Project){
+    this.router.navigate(['projects', clickedProject.id]);
+  }
 }

@@ -1,4 +1,4 @@
 <h2>Funding Projects</h2>
-<div *ngFor="let project of projects">
-  <h3><a routerLink="">{{project.name}} by {{project.postedBy}}</a></h3>
+<div *ngFor="let project of projects" (click)="goToDetailPage(project)">
+  <h3>{{project.name}} by {{project.postedBy}}</h3>
 </div>

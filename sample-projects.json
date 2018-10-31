@@ -1,0 +1,18 @@
+{
+    "projects": [
+        {
+            "name": "Clean Water in Africa",
+            "details": "This project builds clean drinking water wells in rural areas",
+            "postedBy": "Meria, Connor & David",
+            "fundingGoal": 4000,
+            "id": 1
+        },
+        {
+            "name": "Fly Meria and David home",
+            "details": "To reunite two great indviduals with their families in India and China",
+            "postedBy": "Connor",
+            "fundingGoal": 4000,
+            "id": 1
+        }
+    ]
+}
