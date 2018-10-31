@@ -22,7 +22,7 @@ export class ProjectComponent implements OnInit {
     this.projects = this.projectService.getProjects();
   }
 
-  goToDetailPage(clickedProject: Project){
-    this.router.navigate(['projects', clickedProject.id]);
+  goToDetailPage(clickedProject){
+    this.router.navigate(['projects', clickedProject.$key]);
   }
 }

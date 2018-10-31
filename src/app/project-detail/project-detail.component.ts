@@ -11,8 +11,8 @@ import { ProjectService } from '../project.service';
   providers: [ProjectService]
 })
 export class ProjectDetailComponent implements OnInit {
-  projectId: number;
-  projectToDisplay: Project;
+  projectId: string;
+  projectToDisplay;
 
   constructor( private route: ActivatedRoute,
     private location: Location,
@@ -21,7 +21,7 @@ export class ProjectDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.projectId = parseInt(urlParameters['id']);
+      this.projectId = urlParameters['id'];
     });
 
     this.projectToDisplay = this.albumService.getProjectById(this.projectId);

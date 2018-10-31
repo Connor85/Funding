@@ -1,7 +1,7 @@
 <div class="container">
-  <h3>{{projectToDisplay.name}}</h3>
-  <h4>Posted by: {{projectToDisplay.postedBy}}</h4>
-  <p>{{projectToDisplay.details}}</p>
-  <p>Funding Goal: {{projectToDisplay.fundingGoal}}</p>
-  <p>Money Raised: {{projectToDisplay.moneyRaised}}</p>
+  <h3>{{(projectToDisplay | async)?.name}}</h3>
+  <h4>Posted by: {{(projectToDisplay | async)?.postedBy}}</h4>
+  <p>{{(projectToDisplay | async)?.details}}</p>
+  <p>Funding Goal: {{(projectToDisplay | async)?.fundingGoal}}</p>
+  <p>Money Raised: {{(projectToDisplay | async)?.moneyRaised}}</p>
 </div>

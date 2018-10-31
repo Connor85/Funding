@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// import { Project } from './app.module';
+import { Project } from './project.model';
 import { PROJECTS } from './mock-projects';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
@@ -15,12 +15,12 @@ projects: FirebaseListObservable<any[]>;
     return this.projects;
   }
 
-  getProjectById(projectId: number){
-    for (var i = 0; i <= PROJECTS.length - 1; i++) {
-      if (PROJECTS[i].id === projectId) {
-        return PROJECTS[i];
-      }
-    }
+  addProjects(newProject: Project) {
+    this.projects.push(newProject);
   }
 
+  getProjectById(projectId: string)
+  {
+      return this.database.object('projects' + projectId)
+  }
 }

@@ -1,3 +1,28 @@
-<p>
-  admin works!
-</p>
+<h3>Add New Project to Inventory</h3>
+<div>
+  <div>
+    <label>Project Name:</label>
+    <br>
+    <input #newName>
+  </div>
+
+  <div>
+    <label>Project Details:</label>
+    <br>
+    <textarea #newDetails  ></textarea>
+  </div>
+
+  <div>
+    <label>Posted By:</label>
+    <br>
+    <input #newPostedBy>
+  </div>
+
+  <div>
+      <label>Funding Goal:</label>
+      <br>
+      <input #newFund>
+    </div>
+
+    <div>
+      <button class="btn btn-danger" (click)="submitForm(newName.value, newDetails.value, newPostedBy.value, newFund.value); newName.value='';newDetails.value =''; newPostedBy.value =''; newFund.value ='' ">Add</button></div>

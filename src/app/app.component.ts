@@ -7,5 +7,5 @@ import { Project } from './project.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  
 }
