@@ -14,10 +14,10 @@ export class ProjectDetailComponent implements OnInit {
   projectId: string;
   projectToDisplay;
 
-  constructor( private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
     private location: Location,
     private albumService: ProjectService
-    ){}
+  ) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
@@ -25,7 +25,12 @@ export class ProjectDetailComponent implements OnInit {
     });
 
     this.projectToDisplay = this.albumService.getProjectById(this.projectId);
-
   }
 
+  donate(donation: string){
+    console.log(donation);
+    console.log(this.projectToDisplay);
+    this.projectToDisplay.moneyRaised += parseInt(donation);
+    console.log(this.projectToDisplay.moneyRaised);
+  }
 }

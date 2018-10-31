@@ -2,6 +2,6 @@
 <div *ngFor="let project of projects | async" (click)="goToDetailPage(project)">
   <div class="panel-body">
     <h3>{{project.name}} by {{project.postedBy}}</h3>
-    <h1>{{project.$key}}</h1>
+ 
   </div>
 </div>

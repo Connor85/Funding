@@ -21,6 +21,15 @@ projects: FirebaseListObservable<any[]>;
 
   getProjectById(projectId: string)
   {
-      return this.database.object('projects/' + projectId)
+      return this.database.object('/projects/' + projectId)
   }
+
+  updateProject(localUpdatedProject: Project, id: string) {
+    let projectEntryInFirebase = this.getProjectById(id);
+    projectEntryInFirebase.update({
+      moneyRaised: localUpdatedProject.moneyRaised
+    });
+  } 
+  
+  
 }

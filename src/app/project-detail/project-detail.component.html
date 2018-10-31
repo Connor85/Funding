@@ -4,4 +4,6 @@
   <p>{{(projectToDisplay | async)?.details}}</p>
   <p>Funding Goal: {{(projectToDisplay | async)?.fundingGoal}}</p>
   <p>Money Raised: {{(projectToDisplay | async)?.moneyRaised}}</p>
+
+  <a routerLink="/donate" class="btn btn-primary">Donate</a>
 </div>
