@@ -1,4 +1,4 @@
-import { Component, onInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Project } from '../project.model';
 import { Router } from '@angular/router';
 import { ProjectService } from '../project.service';
@@ -11,14 +11,14 @@ import { ProjectService } from '../project.service';
 })
 
 
-export class ProjectComponent implements OnInit{
+export class ProjectComponent implements OnInit {
 
   projects: Project[];
 
   constructor(private router: Router, private projectService: ProjectService){}
 
   ngOnInit(){
-
+    this.projects = this.projectService.getProjects();
   }
 
   goToDetailPage(clickedProject: Project){
